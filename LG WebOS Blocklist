@@ -1,85 +1,47 @@
-! Title: LG WebOS AdGuard Home Blocklist
-! Description: Block ads and unwanted services on LG WebOS TVs. This list is tailored for use with AdGuard Home to block tracking, ad delivery, and other unwanted content from LG's smart services.
-! Homepage: https://github.com/NearWasTaken/lg-webos-adguard-list
-! License: https://github.com/NearWasTaken/lg-webos-adguard-list/blob/main/LICENSE
-! Issues: https://github.com/NearWasTaken/lg-webos-adguard-list/issues
-! Expires: 1 day
-! Last modified: 23 Oct 2024 11:00 UTC
-! Version: 2024.1023.1100.01
-! Syntax: AdGuard Home
-! Number of entries: 61
+! Title: LG WebOS Optimized Blocklist (Ads & OTA Block)
+! Description: Blocks ads and system firmware updates while allowing clock sync and app store.
+! Version: 2026.03.07
+! User Context: Italian Region / IT advanced
 
+# --- [SYSTEM FIRMWARE UPDATES - BLOCKED] ---
+# Blocks the TV from finding and downloading new WebOS firmware versions (OTA)
+||snu.lge.com^
+||su.lge.com^
+||nsu.lge.com^
+||knu.lge.com^
+||lgtvonline.lge.com^
 
-# Blocklist for LG WebOS Services (US)
+# --- [ADVERTISING & TRACKING - BLOCKED] ---
+# Blocks ad delivery, telemetry, and promotional banners
 ||ad.lgappstv.com^
 ||ibis.lgappstv.com^
 ||info.lgsmartad.com^
-||lgtvsdp.com^
-||ngfts.lge.com^
-||rdx2.lgtvsdp.com^
-||smartshare.lgtvsdp.com^
-||lgappstv.com^
 ||us.ad.lgsmartad.com^
-||us.ibs.lgappstv.com^
 ||us.info.lgsmartad.com^
-||us.lgtvsdp.com^
-
-# Community Contributions
-||lgad.cjpowercast.com^.edgesuite.net^
+||de.ad.lgsmartad.com^
+||de.info.lgsmartad.com^
+||eu.ad.lgsmartad.com^
+||eu.info.lgsmartad.com^
+||lgad.cjpowercast.com^
 ||yumenetworks.com^
 ||smartclip.net^
 ||smartclip.com^
-
-# Non-US Entries
-||rdx2.lgtvsdp.com^
-||info.lgsmartad.com^
-||ibs.lgappstv.com^
-||lgtvsdp.com^
-||lgappstv.com^
-||smartshare.lgtvsdp.com^
-
-# Full Block for Europe and Other Regions
-||de.ad.lgsmartad.com^
-||de.emp.lgsmartplatform.com^
-||de.ibs.lgappstv.com^
-||de.info.lgsmartad.com^
-||de.lgeapi.com^
-||de.lgtvsdp.com^
-||de.rdx2.lgtvsdp.com^
-||eu.ad.lgsmartad.com^
-||eu.ibs.lgappstv.com^
-||eu.info.lgsmartad.com^
 ||app-lgwebos.pluto.tv^
-||it.lgtvsdp.com^
-||it.lgeapi.com^
-||it.emp.lgsmartplatform.com^
-
-# LG ThinQ Services
-||eic.common.lgthinq.com^
-||eic.iotservice.lgthinq.com^
-||eic.service.lgthinq.com^
-||eic.ngfts.lge.com^
-||eic.svc-lgthinq-com.aws-thinq-prd.net^
-||eic.cdpsvc.lgtvcommon.com^
-||eic.cdpbeacon.lgtvcommon.com^
-||eic.cdplauncher.lgtvcommon.com^
-||eic.homeprv.lgtvcommon.com^
-||eic.lgtviot.com^
-||eic.nudge.lgtvcommon.com^
-||eic.rdl.lgtvcommon.com^
-||eic.recommend.lgtvcommon.com^
-||eic.service.lgtvcommon.com^
-||gb-lgeapi-com.esi-prd.net^
-||gb.lgeapi.com^
-||lgtvonline.lge.com^
-||lg-channelplus-de-beacons.xumo.com^
-||lg-channelplus-de-mds.xumo.com^
 ||lg-channelplus-eu-beacons.xumo.com^
-||lg-channelplus-eu-mds.xumo.com^
-||kr-op-v2.lgthinqhome.com^
-||ngfts.lge.com^
-||noti.lgthinq.com^
-||objectcontent.lgthinq.com^
 
-# Update Server Block
-||snu.lge.com^
+# --- [CLOCK SYNC & APP STORE - WHITELISTED] ---
+# Essential for NTP sync, geo-localization, and updating apps from the Store
+# These use @@ to override any broader blocklists you might have active
+@@||lgappstv.com^
+@@||lgtvsdp.com^
+@@||it.lgtvsdp.com^
+@@||it.lgeapi.com^
+@@||lgeapi.com^
+@@||rdx2.lgtvsdp.com^
+@@||smartshare.lgtvsdp.com^
+
+# --- [THINQ IOT SERVICES] ---
+# Blocks specific telemetry but keeps basic IoT connectivity if using the mobile app
+||eic.common.lgthinq.com^
+||eic.nudge.lgtvcommon.com^
+||noti.lgthinq.com^
