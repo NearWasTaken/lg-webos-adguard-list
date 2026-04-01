@@ -15,6 +15,9 @@
 ||su-ssl.lge.com^
 ||swu.lge.com^
 ||ota.lge.com^
+||su-ssl.lge.com
+||snu-dev.lge.com
+||su-dev.lge.com
 
 # Firmware distribution servers (including new wiselg endpoints)
 ||eic-ngfts.tv.wiselg.com^
