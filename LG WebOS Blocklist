@@ -1,47 +1,53 @@
-! Title: LG WebOS Optimized Blocklist (Ads & OTA Block)
-! Description: Blocks ads and system firmware updates while allowing clock sync and app store.
-! Version: 2026.03.07
-! User Context: Italian Region / IT advanced
+! Title: LG WebOS Optimized Blocklist (2026 Edition)
+! Description: Advanced blocklist for LG WebOS to stop OTA updates and ads while preserving system clock.
+! Version: 2026.04.01.01
+! Syntax: AdGuard Home
 
-# --- [SYSTEM FIRMWARE UPDATES - BLOCKED] ---
-# Blocks the TV from finding and downloading new WebOS firmware versions (OTA)
+# --- [SYSTEM CLOCK SAFE - DO NOT BLOCK THESE] ---
+# The following domains are intentionally omitted to allow NTP/Time Sync:
+# it.lgtvsdp.com, it.lgeapi.com, eic.common.lgthinq.com
+
+# --- [OTA UPDATE & NOTIFICATION SHIELD] ---
+# Core update servers
 ||snu.lge.com^
 ||su.lge.com^
 ||nsu.lge.com^
+||su-ssl.lge.com^
+||swu.lge.com^
+||ota.lge.com^
+
+# Firmware distribution servers (including new wiselg endpoints)
+||eic-ngfts.tv.wiselg.com^
+||ngfts.lge.com^
+||eic-gfts.lge.com^
 ||knu.lge.com^
+
+# Update notification services (Nudge/RDL)
+||eic.nudge.lgtvcommon.com^
+||eic.rdl.lgtvcommon.com^
+||eic.recommend.lgtvcommon.com^
+||lss.lgthinq.com^
+||eic-op-lss.lgthinq.com^
+
+# --- [LG ADS & TELEMETRY] ---
+||ad.lgsmartad.com^
+||it.info.lgsmartad.com^
+||ngda.lge.com^
+||ibis.lgappstv.com^
+||lgappstv.com^
+||eic.cdpbeacon.lgtvcommon.com^
+||eic.cdpsvc.lgtvcommon.com^
+||it.emp.lgsmartplatform.com^
+
+# --- [THINQ & IOT SERVICES] ---
+||eic.lgtviot.com^
+||eic.api.lgtviot.com^
+||eic.sports.lgtviot.com^
+||eic.service.lgtvcommon.com^
 ||lgtvonline.lge.com^
 
-# --- [ADVERTISING & TRACKING - BLOCKED] ---
-# Blocks ad delivery, telemetry, and promotional banners
-||ad.lgappstv.com^
-||ibis.lgappstv.com^
-||info.lgsmartad.com^
-||us.ad.lgsmartad.com^
-||us.info.lgsmartad.com^
-||de.ad.lgsmartad.com^
-||de.info.lgsmartad.com^
-||eu.ad.lgsmartad.com^
-||eu.info.lgsmartad.com^
-||lgad.cjpowercast.com^
+# --- [THIRD PARTY AD NETWORKS] ---
 ||yumenetworks.com^
 ||smartclip.net^
 ||smartclip.com^
-||app-lgwebos.pluto.tv^
-||lg-channelplus-eu-beacons.xumo.com^
-
-# --- [CLOCK SYNC & APP STORE - WHITELISTED] ---
-# Essential for NTP sync, geo-localization, and updating apps from the Store
-# These use @@ to override any broader blocklists you might have active
-@@||lgappstv.com^
-@@||lgtvsdp.com^
-@@||it.lgtvsdp.com^
-@@||it.lgeapi.com^
-@@||lgeapi.com^
-@@||rdx2.lgtvsdp.com^
-@@||smartshare.lgtvsdp.com^
-
-# --- [THINQ IOT SERVICES] ---
-# Blocks specific telemetry but keeps basic IoT connectivity if using the mobile app
-||eic.common.lgthinq.com^
-||eic.nudge.lgtvcommon.com^
-||noti.lgthinq.com^
+||lgad.cjpowercast.com^
